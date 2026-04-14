@@ -1,7 +1,7 @@
 import transactionModel from "./transaction.model.js";
 import moment from "moment";
 
-// 📤 1. ADD TRANSACTION
+
 export const addTransaction = async (req, res) => {
   try {
     const newTransaction = new transactionModel(req.body);
@@ -19,7 +19,7 @@ export const addTransaction = async (req, res) => {
   }
 };
 
-// 📥 2. GET ALL TRANSACTIONS (Includes Date & Type Filters)
+
 export const getAllTransaction = async (req, res) => {
   try {
     const { frequency, selectedDate, type, userid } = req.body;
@@ -29,7 +29,7 @@ export const getAllTransaction = async (req, res) => {
       ...(frequency !== "custom"
         ? {
             date: {
-              // String-based comparison for YYYY-MM-DD
+            
               $gte: moment().subtract(Number(frequency), "d").format("YYYY-MM-DD"),
             },
           }
@@ -50,7 +50,7 @@ export const getAllTransaction = async (req, res) => {
   }
 };
 
-// ✏️ 3. EDIT TRANSACTION
+
 export const editTransaction = async (req, res) => {
   try {
     await transactionModel.findOneAndUpdate(
@@ -67,7 +67,7 @@ export const editTransaction = async (req, res) => {
   }
 };
 
-// 🗑️ 4. DELETE TRANSACTION
+
 export const deleteTransaction = async (req, res) => {
   try {
     await transactionModel.findOneAndDelete({ _id: req.body.transactionId });
