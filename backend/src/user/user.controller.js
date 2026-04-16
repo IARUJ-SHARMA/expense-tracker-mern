@@ -2,12 +2,12 @@ import userModel from "./user.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-// 📝 1. REGISTER USER
+
 export const registerController = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
-    // Check if user already exists
+    
     const existingUser = await userModel.findOne({ email });
     if (existingUser) {
       return res.status(400).json({
@@ -16,8 +16,7 @@ export const registerController = async (req, res) => {
       });
     }
 
-    // Create New User 
-    // (Note: The password gets hashed automatically by the pre-save hook in your user.model.js)
+   
     const newUser = new userModel({ name, email, password });
     await newUser.save();
 
@@ -40,12 +39,12 @@ export const registerController = async (req, res) => {
   }
 };
 
-// 🔑 2. LOGIN USER (With JWT Token)
+
 export const loginController = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Find user by email
+    
     const user = await userModel.findOne({ email });
     if (!user) {
       return res.status(404).json({
@@ -54,7 +53,7 @@ export const loginController = async (req, res) => {
       });
     }
 
-    // Compare Password using bcrypt
+    
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(401).json({
@@ -63,16 +62,16 @@ export const loginController = async (req, res) => {
       });
     }
 
-    // Generate JWT Token
+    
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
 
-    // Success Response
+    
     res.status(200).json({
       success: true,
       message: "Login Successful",
-      token, // This is your digital passport! 🎫
+      token, 
       user: {
         _id: user._id,
         name: user.name,

@@ -1,17 +1,23 @@
 import express from "express";
-// 🚨 THE FIX: Go up two levels to reach the root 'controllers' folder
-import { 
-  addTransaction, 
-  getAllTransaction, 
-  deleteTransaction, 
-  editTransaction 
-} from "../../controllers/transactionCtrl.js"; 
+import {
+  addTransaction,
+  getAllTransaction,
+  editTransaction,
+  deleteTransaction,
+} from "./transaction.controller.js";
 
 const router = express.Router();
 
+// Add a transaction
 router.post("/add-transaction", addTransaction);
+
+// Get all transactions
 router.post("/get-transaction", getAllTransaction);
+
+// Edit a transaction
 router.post("/edit-transaction", editTransaction);
+
+// Delete a transaction
 router.post("/delete-transaction", deleteTransaction);
 
 export default router;

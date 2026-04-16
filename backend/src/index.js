@@ -34,7 +34,7 @@ app.use("/api/v1/transactions", transactionRoutes);
 
 
 app.get("/", (req, res) => {
-  res.send("Ghost's Expense App API is running! 🚀");
+  res.send(" Expense App API is running! 🚀");
 });
 
 
