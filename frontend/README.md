@@ -1,18 +1,29 @@
-# React + Vite
+# 📊 Full-Stack Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A robust, real-time financial tracking application built with the MERN stack. This platform allows users to securely log, categorize, and analyze their daily expenses and income streams through an interactive dashboard.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Frontend:** React.js (Vite), Context API, Axios, Custom UI Components
+* **Backend:** Node.js, Express.js, RESTful API Architecture
+* **Database:** MongoDB, Mongoose
+* **Security:** JWT Authentication, Protected Routes
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+* **User Authentication:** Encrypted login and registration system.
+* **Transaction Management:** Seamlessly add, edit, and delete income and expense records.
+* **Interactive Analytics:** Real-time visual dashboard for financial tracking and category breakdowns.
+* **Responsive UI/UX:** Clean, modern interface designed for both desktop and mobile web experiences.
+* **Data Security:** Backend endpoint security ensuring financial data is only accessible to the authenticated user.
 
-Note: This will impact Vite dev & build performances.
+## 🧠 System Architecture
 
-## Expanding the ESLint configuration
+This project implements a clear separation of concerns, utilizing an MVC-inspired backend structure (Models, Routes, Controllers) communicating via REST APIs with a component-based React frontend.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Installation & Setup
+
+**1. Clone the repository**
+```bash
+git clone [https://github.com/IARUJ-SHARMA/expense-tracker-mern.git](https://github.com/IARUJ-SHARMA/expense-tracker-mern.git)
+cd expense-tracker-mern
